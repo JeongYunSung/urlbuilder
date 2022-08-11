@@ -1,0 +1,38 @@
+.div--copytext {
+    display: flex;
+}
+
+.icon--animation {
+    animation-name: jump;
+    animation-duration: 0.5s;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0) rotate(-11deg);
+    }
+
+    30% {
+        transform: rotate(11deg);
+    }
+
+    40% {
+        transform: translateY(-6px);
+    }
+
+    60% {
+        transform: translateY(6px) rotate(-8deg);
+    }
+
+    75% {
+        transform: translateY(-4px);
+    }
+
+    90% {
+        transform: translateY(4px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
