@@ -4,24 +4,32 @@ import SendIcon from '@mui/icons-material/Send';
 import PropTypes from 'prop-types';
 
 Input.propTypes = {
-    defaultValue: PropTypes.string,
+    hint: PropTypes.string,
     setValue: PropTypes.func.isRequired
 }
 
-function Input({ defaultValue='', setValue }) {
+function Input({ hint='', setValue }) {
     const [text, setText] = React.useState('');
 
     function handleClick() {
-        setValue(defaultValue + text);
+        setValue(text);
     }
 
     function handleChance(e) {
+        e.preventDefault();
         setText(e.target.value);
+    }
+
+    function handleKeyUp(e) {
+        e.preventDefault();
+        if(e.keyCode === 13) {
+            handleClick(e.target.value);
+        }
     }
 
     return (
         <>
-            <TextField placeholder='Input URL' variant='standard' value={text} onChange={handleChance} />
+            <TextField placeholder={ hint } variant='standard' value={text} onChange={handleChance} onKeyUp={handleKeyUp} />
             <IconButton variant='text' onClick={handleClick}>
                 <SendIcon />
             </IconButton>

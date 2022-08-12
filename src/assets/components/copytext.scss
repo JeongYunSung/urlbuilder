@@ -1,5 +1,26 @@
+.div--nocontent {
+    width: 80vw;
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.div--copytitle {
+    padding-left: 0.5rem;
+    padding-bottom: 0.4rem;
+    border-left: 2px solid rgba(126, 126, 126, 0.5);
+}
+
 .div--copytext {
     display: flex;
+    padding-left: 0.5rem;
+    border-left: 2px solid rgba(126, 126, 126, 0.5);
+
+    &:nth-child(n+1):nth-child(-n+6) {
+        margin-bottom: 0.7rem;
+    }
 }
 
 .icon--animation {
@@ -9,30 +30,26 @@
 
 @keyframes jump {
     0% {
-        transform: translateY(0) rotate(-11deg);
+        transform: translate(0, 0) rotate(0deg);
     }
 
     30% {
-        transform: rotate(11deg);
-    }
-
-    40% {
-        transform: translateY(-6px);
+        transform: rotate(-11deg);
     }
 
     60% {
-        transform: translateY(6px) rotate(-8deg);
+        transform: translate(0, -6px) rotate(11deg);
     }
 
     75% {
-        transform: translateY(-4px);
+        transform: translate(0, -3px) rotate(-7deg);
     }
 
     90% {
-        transform: translateY(4px) rotate(8deg);
+        transform: translate(0, -1px) rotate(7deg);
     }
 
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translate(0, 0) rotate(0deg);
     }
 }

@@ -1,6 +1,6 @@
 const path = require('path');
-const storage = require('electron-json-storage');
 const { app, BrowserWindow, ipcMain } = require('electron');
+const storage = require('electron-json-storage');
 
 (async () => {
     return await new Promise((resolve, reject) => { storage.setDataPath(path.join(__dirname, '../'));
@@ -36,13 +36,14 @@ async function handleFileOpen() {
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 850,
+        height: 650,
         webPreferences: {
             preload: path.resolve(__dirname, 'preload.js')
         }
     });
 
+    win.setMenu(null);
     win.loadFile(path.join(__dirname, '../', 'dist', 'index.html'));
 }
 

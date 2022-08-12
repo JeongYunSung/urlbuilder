@@ -19,7 +19,8 @@ module.exports = {
         path.resolve(__dirname, 'src')
       ],
       exclude: [
-        path.resolve(__dirname, 'node_modules')
+        path.resolve(__dirname, 'node_modules'),
+        path.resolve(__dirname, 'app')
       ],
       use: 'babel-loader'
     }, {

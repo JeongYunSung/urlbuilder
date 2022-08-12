@@ -14,14 +14,16 @@ function CopyText({ title, content }) {
     const [isCopied, setCopied] = useCopyToClipboard();
     const copy = useRef()
 
-    function handleClick() {
+    function handleClick(e) {
+        e.preventDefault();
         if(isCopied) {
             return;
         }
         setCopied(content);
     }
 
-    function handleAnimationEnd() {
+    function handleAnimationEnd(e) {
+        e.preventDefault();
         setTimeout(() => {
             setCopied(false);
         }, 300);
@@ -29,9 +31,11 @@ function CopyText({ title, content }) {
 
     return (
         <>
-            <Typography color='#6c7073' variant='h5'>
-                { title }
-            </Typography>
+            <div className='div--copytitle'>
+                <Typography color='#6c7073' variant='h5'>
+                    { title }
+                </Typography>
+            </div>
             <div className='div--copytext'>
                 <ContentPasteTwoToneIcon 
                     fontSize='medium'

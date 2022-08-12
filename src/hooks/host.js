@@ -1,5 +1,6 @@
-import React, { useEffect, useReducer } from 'react';
-export default function Main() {
+import { useReducer, useEffect } from "react";
+
+export default function useHost() {
     const [local, dispatch] = useReducer((state, action) => {
         switch (action.type) {
             case 'host':
@@ -17,10 +18,5 @@ export default function Main() {
         })();
     }, [local.host, local.port])
 
-    return (
-        <div>
-            <div>Host : <span id='host'>{ local.host }</span></div>
-            <div>Port : <span id='port'>{ local.port }</span></div>
-        </div>
-    )
+    return [local, dispatch];
 }

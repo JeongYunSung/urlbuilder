@@ -8,11 +8,12 @@ TextBox.propTypes = {
 
 
 function TextBox({ list }) {
+    if(list.length == 0) {
+        return (<div className='div--nocontent'>No Contents</div>)
+    }
     return (
         <>
-            { 
-                list.map((item, index) => (<CopyText key={ index } title={ item.title } content={ item.content } />))
-            }
+            { list.map((item, index) => (<CopyText key={ index } title={ item.title } content={ item.content } />)) }
         </>
     )
 }

@@ -20,8 +20,8 @@ function Header({ color='primary', title }) {
             <div className='div--header'>
                 <div className='header--inner'>
                     <ArrowBackIcon onClick={ handleBackClick } />
-                    <Typography color={ color } class='header--title'>
-                        { title }
+                    <Typography color={ color }>
+                        <span className='header--title'>{ title }</span>
                     </Typography>
                     <MenuIcon />
                 </div>
