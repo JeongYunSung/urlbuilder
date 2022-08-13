@@ -1,6 +1,6 @@
 # urlbuilder
 
-Electron과 React르 이용
+Electron과 React를 이용
 
 ![image](https://user-images.githubusercontent.com/12987271/184303187-0ae27152-e148-4937-81f7-85b7928c5afe.png)
 
